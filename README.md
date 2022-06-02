@@ -1,6 +1,10 @@
 # DO NOT USE IT
 it was created for demo purposes only and has no value
 
+### How to run
+```
+npm run start:dev
+```
 
 #### Example wkhtmltopdf
 ```bash
