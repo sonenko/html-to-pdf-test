@@ -1,5 +1,4 @@
-# DO NOT USE IT
-it was created for demo purposes only and has no value
+# DO NOT USE IT - it was created for demo purposes only
 
 ### How to run
 ```
