@@ -19,4 +19,6 @@ wkhtmltopdf --enable-local-file-access contact.html ./tmp/2.pdf
 curl -XPOST http://localhost:3001/wkhtmltopdf -H "Content-Type: application/json" --output ./tmp/wkhtmltopdf.pdf
 
 curl -XPOST http://localhost:3001/puppeteer -H "Content-Type: application/json" --output ./tmp/puppeteer.pdf
+
+curl -XPOST http://localhost:3001/puppeteer-template -H "Content-Type: application/json" -d @./tmp/template-med.json --output ./tmp/puppeteer-from-json-med.pdf
 ```

@@ -41,4 +41,31 @@ export class AppService {
     await browser.close();
     return res;
   }
+
+  async puppeteerToPdfFromTemplate(template: string) {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    console.log(template.length);
+    console.log(template);
+
+    // mock
+    // const data = fs.readFileSync('./tmp/template-med.html', 'utf8');
+
+    // fs.writeFileSync(
+    //   './tmp/template-med.json',
+    //   JSON.stringify({ template: data }),
+    //   'utf-8',
+    // );
+
+    // page.setContent(template, {
+    // await page.goto(`file://${path.resolve('./tmp/template-mini.html')}`, {});
+    // await page.setContent('<h1>hello</h1>', {
+    await page.setContent(template, {});
+
+    const res = await page.pdf({
+      format: 'letter',
+    });
+    await browser.close();
+    return res;
+  }
 }

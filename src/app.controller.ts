@@ -28,4 +28,15 @@ export class AppController {
     const result = await this.appService.puppeteerToPdf();
     res.send(result);
   }
+
+  @Post('puppeteer-template')
+  async postPuppeteerTemplate(@Req() request: Request, @Res() res: Response) {
+    console.log(request.body);
+    const template = request.body.template as string;
+    res.set({
+      'Content-Type': 'document/pdf',
+    });
+    const result = await this.appService.puppeteerToPdfFromTemplate(template);
+    res.send(result);
+  }
 }
